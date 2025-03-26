@@ -1,11 +1,11 @@
-# Granaa
-Granaa é um aplicativo mobile desenvolvido com React Native e Expo para ajudar os usuários a gerenciar suas finanças pessoais de forma simples e intuitiva. Com ele, é possível registrar entradas e saídas, categorizar transações e acompanhar o saldo total em tempo real.
+# Sample Snack app
 
-Documentação do projeto: https://docs.google.com/document/d/1O_9ZLUdDqueEuSK48yLlv4QErcCgxYV-HBC_qH4hgeo/edit?usp=sharing
+Open the `App.js` file to start writing some code. You can preview the changes directly on your phone or tablet by scanning the **QR code** or use the iOS or Android emulators. When you're done, click **Save** and share the link!
 
-![1](https://github.com/user-attachments/assets/34656f56-57f3-483b-80df-2ce80d4eb64d)
-![2](https://github.com/user-attachments/assets/36a2bd49-2204-4f9d-9906-b37243c46afc)
-![3](https://github.com/user-attachments/assets/d81264fe-0fe6-4fd3-9fb4-04615ec734e2)
-![4](https://github.com/user-attachments/assets/8f2cc825-1c87-40a2-9763-69be7f43a952)
+When you're ready to see everything that Expo provides (or if you want to use your own editor) you can **Download** your project and use it with [expo cli](https://docs.expo.dev/get-started/installation/#expo-cli)).
 
+All projects created in Snack are publicly available, so you can easily share the link to this project via link, or embed it on a web page with the `<>` button.
 
+If you're having problems, you can tweet to us [@expo](https://twitter.com/expo) or ask in our [forums](https://forums.expo.dev/c/expo-dev-tools/61) or [Discord](https://chat.expo.dev/).
+
+Snack is Open Source. You can find the code on the [GitHub repo](https://github.com/expo/snack).
