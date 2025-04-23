@@ -4,17 +4,21 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 import LoginScreen from './src/screens/LoginScreen';
 import RegisterScreen from './src/screens/RegisterScreen';
-import TransactionScreen from './src/screens/TransactionScreen';
+import HomeScreen from './src/screens/HomeScreen';
+import CadastroDespesaScreen from './src/screens/CadastroDespesaScreen';
+import CadastroReceitaScreen from './src/screens/CadastroReceitaScreen';
 
 const Stack = createStackNavigator();
 
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Login" screenOptions={{ headerShown: false }}>
+      <Stack.Navigator initialRouteName="Home" screenOptions={{ headerShown: false }}>
         <Stack.Screen name="Login" component={LoginScreen} />
         <Stack.Screen name="Register" component={RegisterScreen} />
-        <Stack.Screen name="Transacao" component={TransactionScreen} />
+        <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen name="CadastroDespesa" component={CadastroDespesaScreen} />
+        <Stack.Screen name="CadastroReceita" component={CadastroReceitaScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
