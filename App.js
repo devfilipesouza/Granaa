@@ -1,18 +1,20 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import LoginScreen from './src/screens/LoginScreen'; // Caminho correto para a tela de login
-import RegisterScreen from './src/screens/RegisterScreen'; // Caminho correto para a tela de registro
 
-// Criação do Stack Navigator
+import LoginScreen from './src/screens/LoginScreen';
+import RegisterScreen from './src/screens/RegisterScreen';
+import TransactionScreen from './src/screens/TransactionScreen';
+
 const Stack = createStackNavigator();
 
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Login">
+      <Stack.Navigator initialRouteName="Login" screenOptions={{ headerShown: false }}>
         <Stack.Screen name="Login" component={LoginScreen} />
         <Stack.Screen name="Register" component={RegisterScreen} />
+        <Stack.Screen name="Transacao" component={TransactionScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
