@@ -1,0 +1,15 @@
+export default {
+  primaryBlue: '#007AFF',
+  successGreen: '#34C759',
+  darkGreen: '#28A745', // Nova cor para o gradiente de receita
+  dangerRed: '#FF3B30',
+  darkRed: '#C62828',
+  white: '#FFFFFF',
+  black: '#333333',
+  lightGray: '#F8F8F8',
+  mediumGray: '#999999',
+  borderColor: '#CCCCCC',
+  darkGray: '#666666',
+  cardBackground: '#FFFFFF',
+  shadowColor: '#000000',
+};
