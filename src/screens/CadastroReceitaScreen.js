@@ -15,7 +15,7 @@ import {
 import DateTimePicker from '@react-native-community/datetimepicker';
 import { LinearGradient } from 'expo-linear-gradient';
 import { Ionicons } from '@expo/vector-icons';
-import AsyncStorage from '@react-native-async-storage/async-storage'; // Import AsyncStorage
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 import Colors from '../constants/Colors';
 import Spacing from '../constants/Spacing';
@@ -33,33 +33,28 @@ const CadastroReceitaScreen = ({ navigation }) => {
     'Salário', 'Freelance', 'Investimentos', 'Presente', 'Outros',
   ];
 
-  const handleSalvar = async () => { // Make handleSalvar async
-    if (!valor || isNaN(parseFloat(valor))) { // Check if valor is a valid number
+  const handleSalvar = async () => {
+    if (!valor || isNaN(parseFloat(valor))) {
       Alert.alert('Erro', 'Informe um valor numérico válido!');
       return;
     }
 
     const novoLancamento = {
-      id: Date.now(), // Unique ID for the new entry
+      id: Date.now(),
       tipo: 'receita',
       valor: parseFloat(valor),
-      data: data.toISOString(), // Store date as ISO string for easier parsing
+      data: data.toISOString(), 
       categoria,
     };
 
     try {
-      // 1. Get existing lancamentos
+
       const existingLancamentosJson = await AsyncStorage.getItem('@lancamentos');
       let existingLancamentos = existingLancamentosJson != null ? JSON.parse(existingLancamentosJson) : [];
-
-      // 2. Add the new lancamento
       existingLancamentos.push(novoLancamento);
-
-      // 3. Save the updated list
       await AsyncStorage.setItem('@lancamentos', JSON.stringify(existingLancamentos));
-
       Alert.alert('Sucesso', 'Receita cadastrada com sucesso!');
-      navigation.goBack(); // Navigate back to the HomeScreen
+      navigation.goBack(); 
     } catch (e) {
       console.error('Erro ao salvar receita:', e);
       Alert.alert('Erro', 'Ocorreu um erro ao salvar a receita.');
@@ -123,7 +118,7 @@ const CadastroReceitaScreen = ({ navigation }) => {
                     )}
                   />
                   <TouchableOpacity
-                    style={[styles.modalItem, { backgroundColor: Colors.dangerRed, borderBottomWidth: 0 }]} // No border for the last item
+                    style={[styles.modalItem, { backgroundColor: Colors.dangerRed, borderBottomWidth: 0 }]}
                     onPress={() => setModalVisible(false)}
                   >
                     <Text style={[Typography.buttonText, { color: Colors.white, textAlign: 'center' }]}>
