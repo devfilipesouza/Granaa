@@ -1,7 +1,7 @@
 export default {
   primaryBlue: '#007AFF',
   successGreen: '#34C759',
-  darkGreen: '#28A745', // Nova cor para o gradiente de receita
+  darkGreen: '#28A745',
   dangerRed: '#FF3B30',
   darkRed: '#C62828',
   white: '#FFFFFF',
