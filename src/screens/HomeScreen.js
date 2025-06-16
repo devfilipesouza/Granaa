@@ -14,9 +14,8 @@ import CustomCard from '../components/CustomCard';
 
 const HomeScreen = ({ navigation }) => {
   const [modalVisible, setModalVisible] = useState(false);
-  const [lancamentos, setLancamentos] = useState([]); // Already starts with an empty array
+  const [lancamentos, setLancamentos] = useState([]);
 
-  // --- Data Loading and Saving ---
   useFocusEffect(
     useCallback(() => {
       const loadLancamentos = async () => {
@@ -25,9 +24,7 @@ const HomeScreen = ({ navigation }) => {
           if (jsonValue != null) {
             setLancamentos(JSON.parse(jsonValue));
           } else {
-            // No initial data is set here.
-            // If AsyncStorage is empty, 'lancamentos' will remain an empty array.
-            setLancamentos([]); // Explicitly set to empty if nothing in storage
+            setLancamentos([]);
           }
         } catch (e) {
           console.error('Erro ao carregar lançamentos', e);
@@ -37,21 +34,17 @@ const HomeScreen = ({ navigation }) => {
     }, [])
   );
 
-  // Save lançamentos to AsyncStorage whenever 'lancamentos' state changes
   useEffect(() => {
     const saveLancamentos = async () => {
       try {
-        // Always save the current state, even if empty, to reflect no data
         await AsyncStorage.setItem('@lancamentos', JSON.stringify(lancamentos));
       } catch (e) {
         console.error('Erro ao salvar lançamentos', e);
       }
     };
-    // Save whenever 'lancamentos' changes, regardless of length
     saveLancamentos();
   }, [lancamentos]);
 
-  // --- Calculations ---
   const totalDespesas = lancamentos
     .filter(l => l.tipo === 'despesa')
     .reduce((acc, cur) => acc + cur.valor, 0);
@@ -79,16 +72,14 @@ const HomeScreen = ({ navigation }) => {
     legendFontSize: Typography.body.fontSize,
   }));
 
-  // Ensure PieChart has at least one data point to avoid crashes
   const pieChartData = dataGrafico.length > 0 ? dataGrafico : [{ name: 'Sem Despesas', amount: 1, color: Colors.mediumGray, legendFontColor: Colors.black, legendFontSize: Typography.body.fontSize }];
 
-  // --- Navigation and Data Passing ---
+
   const handleNavigate = (tipo) => {
     setModalVisible(false);
     navigation.navigate(tipo === 'despesa' ? 'CadastroDespesa' : 'CadastroReceita');
   };
 
-  // --- Logout ---
   const handleLogout = () => {
     Alert.alert('Sair', 'Deseja realmente sair?', [
       { text: 'Cancelar', style: 'cancel' },
@@ -97,8 +88,6 @@ const HomeScreen = ({ navigation }) => {
         style: 'destructive',
         onPress: async () => {
           await AsyncStorage.removeItem('userToken');
-          // Optionally, clear all financial data on logout if it's tied to the user session
-          // await AsyncStorage.removeItem('@lancamentos');
           navigation.reset({
             index: 0,
             routes: [{ name: 'Login' }],
