@@ -14,14 +14,14 @@ const CustomCard = ({ children, style }) => {
 const styles = StyleSheet.create({
   card: {
     backgroundColor: Colors.cardBackground,
-    padding: Spacing.large, // Usando a constante de espaçamento
+    padding: Spacing.large,
     borderRadius: 15,
-    width: '80%', // Manter a largura fixa para este card, ou fazer ajustável via prop
+    width: '80%', 
     alignItems: 'center',
     shadowColor: Colors.shadowColor,
-    shadowOffset: { width: 0, height: Spacing.tiny }, // Usando a constante de espaçamento
+    shadowOffset: { width: 0, height: Spacing.tiny },
     shadowOpacity: 0.2,
-    shadowRadius: Spacing.tiny, // Usando a constante de espaçamento
+    shadowRadius: Spacing.tiny,
     elevation: 5,
   },
 });
