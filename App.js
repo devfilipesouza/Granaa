@@ -1,4 +1,4 @@
-import 'react-native-gesture-handler'; // importante importar antes do React
+import 'react-native-gesture-handler';
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
@@ -10,7 +10,6 @@ import HomeScreen from './src/screens/HomeScreen';
 import CadastroDespesaScreen from './src/screens/CadastroDespesaScreen';
 import CadastroReceitaScreen from './src/screens/CadastroReceitaScreen';
 
-// Criando o stack navigator
 const Stack = createStackNavigator();
 
 export default function App() {
