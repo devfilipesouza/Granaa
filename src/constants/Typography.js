@@ -42,7 +42,6 @@ export default {
     color: Colors.white,
     textAlign: 'center',
   },
-  // Novos estilos para a tela de Despesas
   headerTitle: {
     fontSize: 24,
     color: Colors.white,
